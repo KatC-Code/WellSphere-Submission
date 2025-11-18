@@ -1,0 +1,624 @@
+{
+    "widgets": [
+        {
+            "x": 0,
+            "y": 0,
+            "type": "static-text",
+            "title": "Welcome Message",
+            "width": 12,
+            "height": 3,
+            "content": "🌟 Welcome to WellSphere - Your Intelligent Wellness Companion! \n\nThis comprehensive wellness tracker is designed to support your holistic wellbeing journey:\n\n🎯 Track your daily mood, energy, and physical wellness\n💫 Get personalized insights and gentle guidance\n💧 Monitor sleep, hydration, and mindfulness\n🌱 Set and achieve meaningful wellness goals\n❤️ Access stress management and emotional support tools\n\nStart with your daily check-in below, and let's work together toward your wellness goals. Remember, every small step counts on your journey to better health!"
+        },
+        {
+            "x": 0,
+            "y": 3,
+            "type": "static-text",
+            "title": "Quick Navigation",
+            "width": 12,
+            "height": 2,
+            "content": "⚡ Module Quick Links:\n• Core Check-In (Morning/Evening)\n• Physical Wellness Tracking\n• Mental & Social Check-In\n• Goals & Habits Review\n• Analytics Dashboard\n\nUse Module Visibility Settings to customize your experience."
+        },
+        {
+            "x": 0,
+            "y": 5,
+            "type": "text-input",
+            "title": "Check-in Time",
+            "width": 6,
+            "height": 2,
+            "placeholder": "What time is it? (Use 24-hour format, e.g. 14:30)"
+        },
+        {
+            "x": 6,
+            "y": 5,
+            "type": "select",
+            "title": "Mood Tracker",
+            "width": 6,
+            "height": 2,
+            "options": [
+                "Joyful - Excited and Content",
+                "Peaceful - Calm and Serene",
+                "Motivated - Driven and Focused",
+                "Grateful - Appreciative and Blessed",
+                "Worried - Uncertain and Nervous",
+                "Frustrated - Irritated and Annoyed",
+                "Overwhelmed - Stressed and Overloaded",
+                "Sad - Down or Blue",
+                "Tired - Fatigued and Drained",
+                "Mixed - Experiencing Multiple Emotions"
+            ],
+            "placeholder": "How are you feeling right now? Select the option that best describes your emotional state...",
+            "defaultValue": null
+        },
+        {
+            "x": 0,
+            "y": 7,
+            "type": "text-input",
+            "title": "Daily Check-In",
+            "width": 6,
+            "height": 6,
+            "placeholder": "Share how you're feeling today. For example:\n\n• Physical: 'My energy is low, slight headache, shoulders tense'\n• Mental: 'Feeling focused but a bit anxious about work'\n• Sleep: 'Woke up twice, feel somewhat rested'\n• Changes: 'Better than yesterday, less neck pain'\n\nBe as detailed as you'd like..."
+        },
+        {
+            "x": 6,
+            "y": 7,
+            "type": "select",
+            "title": "Energy Level Tracker",
+            "width": 6,
+            "height": 2,
+            "options": [
+                "High Energy - Very Active and Alert",
+                "Good Energy - Steady and Productive",
+                "Moderate Energy - Functioning Well",
+                "Low Energy - Need Some Rest",
+                "Very Low Energy - Need Significant Rest"
+            ],
+            "placeholder": "How would you rate your current energy level?",
+            "defaultValue": null
+        },
+        {
+            "x": 6,
+            "y": 9,
+            "type": "select",
+            "title": "Sleep Quality",
+            "width": 6,
+            "height": 2,
+            "options": [
+                "Very Restful",
+                "Somewhat Restful",
+                "Neutral",
+                "Somewhat Restless",
+                "Very Restless"
+            ],
+            "placeholder": "How would you rate your sleep quality?",
+            "defaultValue": null
+        },
+        {
+            "x": 6,
+            "y": 11,
+            "max": 24,
+            "min": 0,
+            "step": 0.5,
+            "type": "number-input",
+            "unit": "hours",
+            "title": "Sleep Hours",
+            "width": 6,
+            "height": 2,
+            "placeholder": "How many hours did you sleep last night?",
+            "numberWidgetMode": "both"
+        },
+        {
+            "x": 0,
+            "y": 13,
+            "type": "text-input",
+            "title": "Activity Log",
+            "width": 12,
+            "height": 4,
+            "placeholder": "Examples of activities to log:\n\n• Morning yoga - 20 mins, gentle intensity\n• Walking meeting - 30 mins, moderate pace\n• Gardening - 45 mins, light activity\n• Evening stretch - 10 mins, gentle\n\nInclude type, duration, and intensity level..."
+        },
+        {
+            "x": 0,
+            "y": 17,
+            "type": "select",
+            "title": "Pain/Discomfort Level",
+            "width": 6,
+            "height": 2,
+            "options": [
+                "No Pain",
+                "Mild Discomfort",
+                "Moderate Pain",
+                "Significant Pain",
+                "Severe Pain"
+            ],
+            "placeholder": "Rate your current pain/discomfort level",
+            "defaultValue": null
+        },
+        {
+            "x": 6,
+            "y": 17,
+            "type": "text-input",
+            "title": "Pain Location",
+            "width": 6,
+            "height": 3,
+            "placeholder": "Describe location and type of discomfort. For example:\n\n'Dull ache in lower back'\n'Sharp pain in right shoulder'\n'Stiff neck, both sides'\n'Tension headache, temples area'"
+        },
+        {
+            "x": 0,
+            "y": 20,
+            "type": "inferred-text",
+            "title": "Mood Pattern Analysis",
+            "width": 12,
+            "height": 5,
+            "prompt": "Analyze current mood metrics and patterns:\n\n1. Current Status:\n- Mood selection: [Mood Tracker]\n- Detailed context: [Daily Check-In]\n- Energy correlation: [Energy Level Tracker]\n\n2. Contributing Factors:\n- Sleep quality: [Sleep Quality]\n- Physical state: [Pain/Discomfort Level]\n- Activity level: [Activity Log]\n\n3. Pattern Analysis:\n- Time of day impact\n- Activity-mood relationships\n- Sleep-mood correlations\n\n4. Tracking Focus:\n- Key mood indicators\n- Related metrics to monitor\n- Measurement frequency\n\nFocus on quantifiable patterns and trackable data points.",
+            "parameters": {
+                "model": "bedrock-anthropic.claude-3-5-sonnet-v2-0",
+                "temperature": 0.3
+            }
+        },
+        {
+            "x": 0,
+            "y": 25,
+            "type": "inferred-text",
+            "title": "Sleep Metrics Analysis",
+            "width": 12,
+            "height": 6,
+            "prompt": "Analyze sleep-related data points:\n\n1. Core Metrics:\n- Duration: [Sleep Hours] hours\n- Quality rating: [Sleep Quality]\n- Energy impact [Energy Level Tracker]\n\n2. Contributing Factors:\n- Physical activity level [Activity Log]\n- Pain/discomfort [Pain/Discomfort Level]\n- Evening routine [Self-Care Activities]\n\n3. Pattern Analysis:\n- Sleep-mood correlations\n- Activity-sleep relationships\n- Environmental factors\n\n4. Tracking Focus:\n- Key sleep metrics\n- Environmental variables\n- Behavioral indicators\n\nProvide data-based analysis and identify key tracking points.",
+            "parameters": {
+                "model": "bedrock-anthropic.claude-3-5-sonnet-v2-0",
+                "temperature": 0.3
+            }
+        },
+        {
+            "x": 0,
+            "y": 31,
+            "type": "inferred-text",
+            "title": "Pain Pattern Analysis",
+            "width": 12,
+            "height": 6,
+            "prompt": "Analyze pain/discomfort patterns and related metrics:\n\n1. Current Status:\n- Pain level: [Pain/Discomfort Level]\n- Location: [Pain Location]\n- Timing and duration\n\n2. Related Metrics:\n- Activity impact [Activity Log]\n- Sleep quality effect [Sleep Quality]\n- Energy level correlation [Energy Level Tracker]\n\n3. Pattern Identification:\n- Activity-pain relationships\n- Time-of-day patterns\n- Environmental factors\n\n4. Tracking Points:\n- Key pain indicators\n- Related metrics to monitor\n- Measurement frequency\n\nFocus on data patterns and measurable indicators.",
+            "parameters": {
+                "model": "bedrock-anthropic.claude-3-5-sonnet-v2-0",
+                "temperature": 0.3
+            }
+        },
+        {
+            "x": 0,
+            "y": 37,
+            "type": "static-text",
+            "title": "Physical Wellness Module",
+            "width": 12,
+            "height": 2,
+            "content": "💪 Physical Wellness Tracking\nMonitor your physical activity, hydration, nutrition, and rest patterns throughout the day."
+        },
+        {
+            "x": 0,
+            "y": 39,
+            "max": 100000,
+            "min": 0,
+            "step": 100,
+            "type": "number-input",
+            "unit": "steps",
+            "title": "Daily Steps",
+            "width": 6,
+            "height": 2,
+            "placeholder": "How many steps have you taken today?",
+            "numberWidgetMode": "both"
+        },
+        {
+            "x": 6,
+            "y": 39,
+            "max": 20,
+            "min": 0,
+            "step": 1,
+            "type": "number-input",
+            "unit": "glasses",
+            "title": "Water Intake",
+            "width": 6,
+            "height": 2,
+            "placeholder": "How many glasses of water have you had today?",
+            "numberWidgetMode": "both"
+        },
+        {
+            "x": 0,
+            "y": 41,
+            "type": "inferred-text",
+            "title": "Daily Progress Tracker",
+            "width": 12,
+            "height": 5,
+            "prompt": "Generate a visual progress report for today at [Check-in Time]:\n\n⏰ Time Context Analysis:\nBased on check-in time, suggest optimal timing for remaining wellness activities.\n\n🌊 Hydration Progress\nTarget: 12 glasses | Current: [Water Intake]\nProgress: (•••◦◦) ([Water Intake]/12 * 100)%\nSuggested timing for next intake based on current time\n\n👣 Step Count Progress\nTarget: 10000 steps | Current: [Daily Steps]\nProgress: (••◦◦◦) ([Daily Steps]/10000 * 100)%\nRecommended walking times based on [Energy Level Tracker]\n\n🧘 Mindfulness Progress\nTarget: 30 min | Current: [Mindfulness Minutes]\nProgress: (•◦◦◦◦) ([Mindfulness Minutes]/30 * 100)%\nSuggested mindfulness breaks aligned with energy patterns\n\n🔥 Activity Streak\nHabit Status: [Wellness Habit Tracker]\n\nProvide encouraging feedback based on today's progress and time-optimized suggestions for remaining goals.",
+            "parameters": {
+                "model": "bedrock-anthropic.claude-3-5-sonnet-v2-0",
+                "temperature": 0.1
+            }
+        },
+        {
+            "x": 0,
+            "y": 46,
+            "max": 180,
+            "min": 0,
+            "step": 1,
+            "type": "number-input",
+            "unit": "minutes",
+            "title": "Mindfulness Minutes",
+            "width": 6,
+            "height": 2,
+            "placeholder": "How many minutes did you spend on mindfulness/meditation today?",
+            "numberWidgetMode": "both"
+        },
+        {
+            "x": 0,
+            "y": 48,
+            "type": "text-input",
+            "title": "Meal Journal",
+            "width": 12,
+            "height": 4,
+            "placeholder": "Example of a daily food log:\n\n8am: Oatmeal with berries, green tea\n10:30am: Apple and almonds\n1pm: Quinoa salad with chickpeas\n3pm: Greek yogurt with honey\n6:30pm: Grilled salmon, roasted vegetables\n\nInclude timing and portions if you'd like..."
+        },
+        {
+            "x": 0,
+            "y": 52,
+            "type": "select",
+            "title": "Module Visibility Settings",
+            "width": 12,
+            "height": 2,
+            "options": [
+                "Show All Modules",
+                "Core Check-In Only",
+                "Physical Wellness Focus",
+                "Mental & Social Focus",
+                "Goals & Analytics Focus",
+                "Custom Setup"
+            ],
+            "placeholder": "Choose which modules to display...",
+            "defaultValue": "Show All Modules"
+        },
+        {
+            "x": 0,
+            "y": 54,
+            "type": "inferred-text",
+            "title": "Physical Wellness & Hydration Analysis",
+            "width": 12,
+            "height": 8,
+            "prompt": "Analyze physical wellness metrics tracked today:\n\n1. Activity Metrics:\n- Exercise details from [Activity Log]\n- Step count: [Daily Steps]\n- Activity intensity patterns\n- Movement frequency\n\n2. Recovery Indicators:\n- Sleep duration: [Sleep Hours]\n- Sleep quality: [Sleep Quality]\n- Pain/discomfort: [Pain/Discomfort Level]\n- Reported symptoms: [Symptom Timeline]\n\n3. Hydration Analysis:\n- Current intake: [Water Intake] glasses\n- Time-based recommendations:\n  • Morning (before 10am): 2-3 glasses\n  • Midday (10am-2pm): 3-4 glasses\n  • Afternoon (2pm-6pm): 3-4 glasses\n  • Evening (after 6pm): 2-3 glasses\n- Activity-adjusted targets\n- Next recommended hydration time\n\n4. Wellness Markers:\n- Nutrition patterns: [Meal Journal]\n- Energy level: [Energy Level Tracker]\n- Medication adherence: [Medication Tracker]\n\n5. Action Items:\n- Key metrics to monitor\n- Specific timing for next water intake\n- Suggested movement based on current state\n\nProvide analysis based on tracked data and identify specific metrics to focus on.",
+            "parameters": {
+                "model": "bedrock-anthropic.claude-3-5-sonnet-v2-0",
+                "temperature": 0.3
+            }
+        },
+        {
+            "x": 0,
+            "y": 62,
+            "type": "inferred-text",
+            "title": "Nutrition & Mood Tracking Analysis",
+            "width": 12,
+            "height": 8,
+            "prompt": "Analyze tracked nutrition and mood data:\n\n1. Nutrition Tracking:\n- Meal timing and patterns from [Meal Journal]\n- Hydration status: [Water Intake] glasses\n- Meal-mood correlations\n\n2. Mood Metrics:\n- Current mood: [Mood Tracker]\n- Energy level: [Energy Level Tracker]\n- Sleep quality impact: [Sleep Quality]\n\n3. Pattern Analysis:\n- Timing of meals vs energy levels\n- Hydration and mood correlation\n- Sleep-nutrition-mood connections\n\n4. Data Points to Track:\n- Key nutrition metrics\n- Mood indicators\n- Notable patterns\n\nFocus on data patterns and measurable indicators.",
+            "parameters": {
+                "model": "bedrock-anthropic.claude-3-5-sonnet-v2-0",
+                "temperature": 0.3
+            }
+        },
+        {
+            "x": 0,
+            "y": 70,
+            "type": "static-text",
+            "title": "Goals & Habits Module",
+            "width": 12,
+            "height": 2,
+            "content": "🎯 Goals & Habits\nSet meaningful goals, track your progress, and build lasting healthy habits."
+        },
+        {
+            "x": 0,
+            "y": 72,
+            "type": "text-input",
+            "title": "Daily Goal",
+            "width": 12,
+            "height": 4,
+            "placeholder": "Set a specific, achievable goal for today. Examples:\n\n• '3 x 5-min walking breaks during work'\n• '8 glasses of water, tracked hourly'\n• '10-min morning meditation before email'\n• 'Stretch routine during lunch break'\n• 'Screen-free wind-down 30 mins before bed'"
+        },
+        {
+            "x": 0,
+            "y": 76,
+            "type": "select",
+            "title": "Goal Status",
+            "width": 6,
+            "height": 2,
+            "options": [
+                "Goal Completed!",
+                "Still Working On It",
+                "Need to Adjust Goal"
+            ],
+            "placeholder": "Update your goal status...",
+            "defaultValue": null
+        },
+        {
+            "x": 6,
+            "y": 76,
+            "type": "select",
+            "title": "Wellness Habit Tracker",
+            "width": 6,
+            "height": 2,
+            "options": [
+                "Water Goal Met",
+                "Mindfulness Practice Done",
+                "Physical Activity Completed",
+                "Sleep Goal Achieved",
+                "Self-Care Activity Done"
+            ],
+            "placeholder": "Select which habits you completed today",
+            "defaultValue": null
+        },
+        {
+            "x": 0,
+            "y": 78,
+            "type": "inferred-text",
+            "title": "Goal Support",
+            "width": 12,
+            "height": 6,
+            "prompt": "Analyze the wellness goal [Daily Goal] in context of today's tracking data:\n\n1. Goal Analysis:\n- Connection to current metrics\n- Alignment with energy level [Energy Level Tracker]\n- Consideration of physical state [Pain/Discomfort Level]\n\n2. Implementation Plan:\n- Specific steps based on current state\n- Timing aligned with energy patterns\n- Adjustments needed based on tracked symptoms\n\n3. Progress Integration:\n- How this goal connects to tracked habits [Wellness Habit Tracker]\n- Relation to overall wellness metrics\n- Impact on identified health patterns\n\n4. Success Strategy:\n- Specific checkpoints for tracking\n- Measurable indicators of progress\n- When/how to log completion\n\nFocus on measurable actions and trackable outcomes.",
+            "parameters": {
+                "model": "bedrock-anthropic.claude-3-5-sonnet-v2-0",
+                "temperature": 0
+            }
+        },
+        {
+            "x": 0,
+            "y": 84,
+            "type": "inferred-text",
+            "title": "Goal Progress Metrics",
+            "width": 12,
+            "height": 4,
+            "prompt": "Analyze goal progress metrics:\n\n1. Goal Status:\n- Current goal: [Daily Goal]\n- Progress state: [Goal Status]\n- Completion markers\n\n2. Related Metrics:\n- Energy level: [Energy Level Tracker]\n- Physical state: [Pain/Discomfort Level]\n- Activity data: [Activity Log]\n\n3. Pattern Analysis:\n- Time-based progress patterns\n- Success rate indicators\n- Obstacle frequency\n\n4. Tracking Points:\n- Progress indicators\n- Measurement frequency\n- Key checkpoints\n\nFocus on measurable progress and trackable milestones.",
+            "parameters": {
+                "model": "bedrock-anthropic.claude-3-5-sonnet-v2-0",
+                "temperature": 0.3
+            }
+        },
+        {
+            "x": 0,
+            "y": 88,
+            "type": "inferred-text",
+            "title": "Habit Metrics Dashboard",
+            "width": 12,
+            "height": 6,
+            "prompt": "Analyze habit completion metrics:\n\n📊 Daily Tracking\n• Water: [Water Intake]/20 glasses complete\n• Mindfulness: [Mindfulness Minutes]/180 min complete\n• Sleep: [Sleep Hours]/8 hours achieved\n• Steps: [Daily Steps]/10000 complete\n\n📈 Completion Analysis\n• Today's Habits: [Wellness Habit Tracker]\n• Activity Status: [Activity Log]\n• Self-Care: [Self-Care Activities]\n\n📉 Pattern Recognition\n• Most Consistent Habits\n• Completion Time Patterns\n• Success Rate Analysis\n\nDisplay numerical completion rates and statistical patterns.",
+            "parameters": {
+                "model": "bedrock-anthropic.claude-3-5-sonnet-v2-0",
+                "temperature": 0.1
+            }
+        },
+        {
+            "x": 0,
+            "y": 94,
+            "type": "select",
+            "title": "Medication Tracker",
+            "width": 12,
+            "height": 2,
+            "options": [
+                "All Medications Taken",
+                "Some Medications Taken",
+                "No Medications Taken",
+                "No Medications Scheduled"
+            ],
+            "placeholder": "Track your medication status for today",
+            "defaultValue": null
+        },
+        {
+            "x": 0,
+            "y": 96,
+            "type": "text-input",
+            "title": "Symptom Timeline",
+            "width": 12,
+            "height": 4,
+            "placeholder": "Track symptoms with timing and intensity. For example:\n\n9am: Mild headache started\n11am: Headache increased to moderate\n2pm: Added slight nausea\n4pm: Headache improved after water and break\n\nInclude any patterns or triggers you notice..."
+        },
+        {
+            "x": 0,
+            "y": 100,
+            "type": "inferred-text",
+            "title": "Stress & Energy Metrics Analysis",
+            "width": 12,
+            "height": 8,
+            "prompt": "Analyze stress and energy data patterns:\n\n1. Current Indicators:\n- Mood state: [Mood Tracker]\n- Energy level: [Energy Level Tracker]\n- Physical markers: [Pain/Discomfort Level]\n\n2. Contributing Metrics:\n- Sleep data: [Sleep Hours], [Sleep Quality]\n- Activity level: [Activity Log]\n- Mindfulness practice: [Mindfulness Minutes]\n\n3. Pattern Identification:\n- Time-based variations\n- Activity-stress correlations\n- Recovery indicators\n\n4. Measurement Focus:\n- Key stress markers\n- Energy level tracking points\n- Pattern monitoring intervals\n\nEmphasize data patterns and measurable indicators.",
+            "parameters": {
+                "model": "bedrock-anthropic.claude-3-5-sonnet-v2-0",
+                "temperature": 0.3
+            }
+        },
+        {
+            "x": 0,
+            "y": 108,
+            "type": "static-text",
+            "title": "Mental & Social Wellness Module",
+            "width": 12,
+            "height": 2,
+            "content": "🧠 Mental & Social Wellness\nTrack your emotional well-being, social connections, and self-care practices."
+        },
+        {
+            "x": 0,
+            "y": 110,
+            "type": "select",
+            "title": "Social Connection Check",
+            "width": 12,
+            "height": 2,
+            "options": [
+                "Felt very connected today",
+                "Had some meaningful interactions",
+                "Limited social interaction",
+                "Feeling somewhat isolated",
+                "Seeking more connection"
+            ],
+            "placeholder": "How connected did you feel to others today?",
+            "defaultValue": null
+        },
+        {
+            "x": 0,
+            "y": 112,
+            "type": "inferred-text",
+            "title": "Daily Wellness Journey",
+            "width": 12,
+            "height": 6,
+            "prompt": "Create a timeline of today's wellness journey:\n\n🌅 Morning Check-in at [Check-in Time]\nFeeling: Current mood from [Mood Tracker]\nEnergy: Current level from [Energy Level Tracker]\n\n🌞 Daily Activities & Progress\nPhysical: [Daily Steps] steps walked\nWellness: [Water Intake] glasses of water\nMindful: [Mindfulness Minutes] minutes of practice\n\n🌃 Evening Status\nGoal Progress: Current status from [Goal Status]\nSocial Wellness: Current level from [Social Connection Check]\nSelf-Care: Latest activity from [Self-Care Activities]\n\nHighlight key achievements and suggest optimal timing for remaining activities.",
+            "parameters": {
+                "model": "bedrock-anthropic.claude-3-5-sonnet-v2-0",
+                "temperature": 0.1
+            }
+        },
+        {
+            "x": 0,
+            "y": 118,
+            "type": "text-input",
+            "title": "Self-Care Activities",
+            "width": 12,
+            "height": 4,
+            "placeholder": "Examples of self-care activities to log:\n\n• 15-min morning reading with herbal tea\n• Relaxing bath with lavender oil\n• 10-min mindful garden time\n• Called a friend for support\n• Evening stretching routine\n• Practiced deep breathing\n• Journaling before bed"
+        },
+        {
+            "x": 0,
+            "y": 122,
+            "type": "inferred-text",
+            "title": "Social Connection Metrics",
+            "width": 12,
+            "height": 5,
+            "prompt": "Track and analyze social wellness metrics:\n\n1. Connection Data:\n- Current level: [Social Connection Check]\n- Related mood state: [Mood Tracker]\n- Energy correlation: [Energy Level Tracker]\n\n2. Activity Patterns:\n- Social components in [Self-Care Activities]\n- Time-of-day patterns\n- Duration and frequency\n\n3. Impact Analysis:\n- Effect on mood trends\n- Correlation with energy levels\n- Relationship to sleep quality\n\n4. Measurement Points:\n- Key social indicators\n- Optimal tracking times\n- Success metrics\n\nFocus on measurable patterns and trackable outcomes.",
+            "parameters": {
+                "model": "bedrock-anthropic.claude-3-5-sonnet-v2-0",
+                "temperature": 0.3
+            }
+        },
+        {
+            "x": 0,
+            "y": 127,
+            "type": "inferred-text",
+            "title": "Self-Care Activity Analysis",
+            "width": 12,
+            "height": 5,
+            "prompt": "Analyze self-care activities and their impacts:\n\n1. Activity Tracking:\n- Activities logged: [Self-Care Activities]\n- Duration and timing patterns\n- Frequency of different types\n\n2. Impact Metrics:\n- Effect on mood [Mood Tracker]\n- Energy level changes [Energy Level Tracker]\n- Sleep quality correlation [Sleep Quality]\n\n3. Pattern Analysis:\n- Most frequent activities\n- Time-of-day patterns\n- Activity-outcome correlations\n\n4. Measurement Points:\n- Key indicators to track\n- Optimal tracking times\n- Success metrics\n\nFocus on identifying patterns and measurable outcomes.",
+            "parameters": {
+                "model": "bedrock-anthropic.claude-3-5-sonnet-v2-0",
+                "temperature": 0.3
+            }
+        },
+        {
+            "x": 0,
+            "y": 132,
+            "type": "inferred-text",
+            "title": "Energy Pattern Insights",
+            "width": 12,
+            "height": 6,
+            "prompt": "Analyze energy-related metrics from today's tracking:\n\n1. Current Metrics:\n- Energy level: [Energy Level Tracker]\n- Sleep data: [Sleep Hours] hours, [Sleep Quality]\n- Physical activity: [Activity Log]\n- Hydration: [Water Intake] glasses\n\n2. Pattern Identification:\n- Time-based energy fluctuations\n- Activity impact on energy\n- Sleep-energy correlation\n\n3. Contributing Factors:\n- Nutrition timing [Meal Journal]\n- Physical discomfort [Pain/Discomfort Level]\n- Mood state [Mood Tracker]\n\n4. Tracking Recommendations:\n- Key energy indicators to monitor\n- Optimal measurement times\n- Metrics needing closer attention\n\nFocus on quantifiable patterns and trackable metrics.",
+            "parameters": {
+                "model": "bedrock-anthropic.claude-3-5-sonnet-v2-0",
+                "temperature": 0.3
+            }
+        },
+        {
+            "x": 0,
+            "y": 138,
+            "type": "static-text",
+            "title": "Insights & Analytics Module",
+            "width": 12,
+            "height": 2,
+            "content": "📊 Wellness Insights\nComprehensive analysis of your wellness data, patterns, and trends."
+        },
+        {
+            "x": 0,
+            "y": 140,
+            "type": "inferred-text",
+            "title": "Visual Wellness Dashboard",
+            "width": 12,
+            "height": 6,
+            "prompt": "Create a visual wellness snapshot:\n\n🏹 Today's Core Metrics\n• Rest: [Sleep Hours]h sleep ([Sleep Quality])\n• Movement: [Daily Steps]/10000 steps\n• Mindfulness: [Mindfulness Minutes]/30min\n• Hydration: [Water Intake]/12 glasses\n\n📈 Current Status (1-5 scale)\n• Energy Level: Current level from [Energy Level Tracker]\n• Emotional State: Current mood from [Mood Tracker]\n• Physical Comfort: Current level from [Pain/Discomfort Level]\n• Social Wellbeing: Current level from [Social Connection Check]\n\n🎯 Progress Overview\n• Daily Goal: Current goal from [Daily Goal]\n• Status: Current status from [Goal Status]\n• Habits: Current status from [Wellness Habit Tracker]\n\nDisplay key metrics with completion percentages.",
+            "parameters": {
+                "model": "bedrock-anthropic.claude-3-5-sonnet-v2-0",
+                "temperature": 0.1
+            }
+        },
+        {
+            "x": 0,
+            "y": 146,
+            "type": "inferred-text",
+            "title": "Metric Correlation Dashboard",
+            "width": 12,
+            "height": 5,
+            "prompt": "Track key metric relationships and patterns:\n\n📊 Activity Correlations\n• Steps/Energy: [Daily Steps] → [Energy Level Tracker]\n• Exercise/Mood: [Activity Log] → [Mood Tracker]\n• Mindfulness/Stress: [Mindfulness Minutes] impact\n\n📈 Wellness Links\n• Sleep/Mood: [Sleep Hours], [Sleep Quality] → [Mood Tracker]\n• Hydration/Energy: [Water Intake] → [Energy Level Tracker]\n• Pain/Activity: [Pain/Discomfort Level] vs [Activity Log]\n\n🔄 24h Changes\n• Metric Shifts: Track daily variations\n• Pattern Changes: Note disruptions\n• Risk Indicators: Flag significant changes\n\nFocus on quantifiable correlations.",
+            "parameters": {
+                "model": "bedrock-anthropic.claude-3-5-sonnet-v2-0",
+                "temperature": 0.1
+            }
+        },
+        {
+            "x": 0,
+            "y": 151,
+            "type": "inferred-text",
+            "title": "Weekly Progress Summary",
+            "width": 12,
+            "height": 6,
+            "prompt": "Summarize this week's top achievements and areas for focus:\n\n🏆 Top 3 Wins\n1. Based on [Goal Status] and [Wellness Habit Tracker]\n2. Improvements in [Mood Tracker] and [Energy Level Tracker]\n3. Progress in [Daily Steps], [Water Intake], or [Mindfulness Minutes]\n\n💡 Focus Area\n• Identify one key area from tracked metrics that needs attention\n• Suggest specific, actionable steps for improvement\n\n📊 Week-over-Week Changes\n• Compare current metrics to previous week\n• Note significant improvements or changes\n• Highlight consistent patterns\n\nKeep focus on measurable progress and actionable insights.",
+            "parameters": {
+                "model": "bedrock-anthropic.claude-3-5-sonnet-v2-0",
+                "temperature": 0.1
+            }
+        },
+        {
+            "x": 0,
+            "y": 157,
+            "type": "inferred-text",
+            "title": "Personalized Recommendations",
+            "width": 12,
+            "height": 6,
+            "prompt": "Based on your patterns from [Check-in Time], [Mood Tracker], and [Energy Level Tracker]:\n\n⏰ Optimal Timing Suggestions\n• Best time for exercise: Based on [Energy Level Tracker]\n• Ideal check-in times: Pattern from [Check-in Time]\n• Strategic breaks: Based on [Pain/Discomfort Level]\n\n🎯 Customized Goals\n• Suggested targets based on your patterns\n• Adjustments to current [Daily Goal]\n• New habits to consider\n\n💫 Module Focus\nRecommend which modules deserve more attention based on:\n• Recent metrics\n• Pattern analysis\n• Goal progress\n\nProvide specific, actionable recommendations.",
+            "parameters": {
+                "model": "bedrock-anthropic.claude-3-5-sonnet-v2-0",
+                "temperature": 0.3
+            }
+        },
+        {
+            "x": 0,
+            "y": 163,
+            "type": "inferred-text",
+            "title": "Movement Suggestion",
+            "width": 12,
+            "height": 4,
+            "prompt": "Based on the user's current state:\n\nMood: [Mood Tracker]\nEnergy Level: [Energy Level Tracker]\nPain/Discomfort: [Pain/Discomfort Level]\nPain Location: [Pain Location]\n\nSuggest a gentle, appropriate movement or physical activity that could help in this moment. Consider:\n\n1. Current energy level\n2. Any pain or discomfort\n3. Emotional state\n4. Time of day\n\nProvide a specific, achievable suggestion with estimated duration and intensity level. Include modifications if needed.",
+            "parameters": {
+                "model": "bedrock-anthropic.claude-3-5-sonnet-v2-0",
+                "temperature": 0.3
+            }
+        },
+        {
+            "x": 0,
+            "y": 167,
+            "type": "text-input",
+            "title": "Reflection & Gratitude Journal",
+            "width": 12,
+            "height": 4,
+            "placeholder": "Take a moment to reflect. Examples:\n\nThoughts & Feelings:\n• 'Feeling proud of maintaining my water intake goal'\n• 'Concerned about upcoming presentation'\n\nGratitude:\n• 'Grateful for my morning walk in sunshine'\n• 'Thankful for supportive message from friend'\n\nKindness:\n• 'Helped colleague with project'\n• 'Sent encouraging text to sister'\n\nShare as much or as little as you'd like..."
+        },
+        {
+            "x": 0,
+            "y": 171,
+            "type": "inferred-text",
+            "title": "Reflection & Gratitude Analysis",
+            "width": 12,
+            "height": 6,
+            "prompt": "Based on the user's journal entry [Reflection & Gratitude Journal] and current metrics:\n\nMood: [Mood Tracker]\nEnergy: [Energy Level Tracker]\nSocial Connection: [Social Connection Check]\nTime of Day: Current\n\nOffer a thoughtful response that:\n\n1. Emotional Insight\n- Acknowledges expressed feelings\n- Identifies potential patterns\n- Notes connections to tracked wellness data\n\n2. Gratitude Perspective\n- Highlights grateful elements shared\n- Connects gratitude to current wellness state\n- Suggests ways to build on positive aspects\n\n3. Kindness & Connection\n- Notes any mentioned acts of kindness\n- Suggests one simple kind action for today\n- Links to social connection data\n\n4. Forward Movement\n- Offers one small, manageable next step\n- Connects to existing goals [Daily Goal]\n- Provides specific timing or context\n\nKeep the tone warm and supportive while maintaining connection to tracked wellness data.",
+            "parameters": {
+                "model": "bedrock-anthropic.claude-3-5-sonnet-v2-0",
+                "temperature": 0.3
+            }
+        },
+        {
+            "x": 0,
+            "y": 177,
+            "type": "inferred-text",
+            "title": "Mini Meditation & Breathing Guide",
+            "width": 12,
+            "height": 5,
+            "prompt": "Create a brief 1-3 minute meditation or breathing exercise based on:\n\nCurrent Mood: [Mood Tracker]\nEnergy Level: [Energy Level Tracker]\nPain Status: [Pain/Discomfort Level]\nStress Indicators: Time of day and tracked patterns\n\nProvide:\n1. A Structured Brief Practice\n- Specific breathing pattern (e.g., 4-4-4 box breathing or 4-7-8 calming breath)\n- Clear timing for each phase\n- Gentle postural guidance\n\n2. Mindful Awareness Elements\n- Body scan elements if relevant\n- Grounding techniques\n- Present-moment anchors\n\n3. Customization Options\n- Seated or lying down variations\n- Modifications for current pain/discomfort\n- Energy-level appropriate adjustments\n\nKeep instructions clear, gentle, and time-specific. Format as a simple step-by-step guide that can be done anywhere.",
+            "parameters": {
+                "model": "bedrock-anthropic.claude-3-5-sonnet-v2-0",
+                "temperature": 0.3
+            }
+        }
+    ]
+}
