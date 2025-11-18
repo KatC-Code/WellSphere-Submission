@@ -6,8 +6,7 @@ It combines empathetic prompts, behavioral science, and advanced analytics to pr
 
 ## Key Features
 - **Comprehensive tracking** of physical, emotional, and mental well‑being  
-- **Empathetic prompts** that motivate without overwhelming  
-- **Gamified challenges** to keep users engaged and celebrate progress  
+- **Empathetic prompts** that motivate without overwhelming    
 - **Advanced analytics** for personalized insights and habit formation  
 - **Clean, user‑friendly interface** that makes wellness data accessible and actionable  
 
