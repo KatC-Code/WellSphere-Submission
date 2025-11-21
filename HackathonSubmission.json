@@ -20,6 +20,30 @@
         },
         {
             "x": 0,
+            "width": 12,
+            "y": 3,
+            "type": "select",
+            "title": "Quick Actions & Priority Tasks",
+            "options": [
+                "🎯 Start Daily Check-In",
+                "💊 Log Medication",
+                "💧 Track Water Intake",
+                "❤️ Add Self-Care Activity",
+                "🏃‍♂️ Record Exercise",
+                "🆘 Access Crisis Support",
+                "🧘‍♂️ Start Meditation",
+                "📊 View Progress Dashboard",
+                "😴 Log Sleep",
+                "🍽️ Add Meal Entry",
+                "🌱 Set New Goal",
+                "🔄 Track Habit"
+            ],
+            "placeholder": "What would you like to do? Select an action to jump to that section...",
+            "height": 2,
+            "defaultValue": null
+        },
+        {
+            "x": 0,
             "y": 5,
             "type": "text-input",
             "title": "Check-in Time",
@@ -120,7 +144,7 @@
             "y": 11,
             "type": "inferred-text",
             "title": "Visual Wellness Dashboard",
-            "prompt": "Create a comprehensive wellness snapshot with correlations and progress:\n\n🌅 Daily Journey Overview\nMorning Check-in at [Check-in Time]\n• Feeling: Current mood from [Mood Tracker]\n• Energy: Current level from [Energy Level Tracker]\n\n📊 Progress Tracking\n🌊 Hydration: [Water Intake]/12 glasses ([Water Intake]/12 * 100)%\n👣 Steps: [Daily Steps]/10000 ([Daily Steps]/10000 * 100)%\n🧘 Mindfulness: [Mindfulness Minutes]/30min ([Mindfulness Minutes]/30 * 100)%\n💤 Sleep: [Sleep Hours]/8h ([Sleep Hours]/8 * 100)%\n\n📈 Current Status (1-5 scale)\n• Energy Level: Current level from [Energy Level Tracker]\n• Emotional State: Current mood from [Mood Tracker]\n• Physical Comfort: Current level from [Pain/Discomfort Level]\n• Social Wellbeing: Current level from [Social Connection Check]\n\n🔄 Key Metric Correlations\n• Activity Impact: [Daily Steps] → [Energy Level Tracker]\n• Exercise/Mood: [Activity Log] → [Mood Tracker]\n• Sleep/Mood: [Sleep Hours], [Sleep Quality] → [Mood Tracker]\n• Hydration/Energy: [Water Intake] → [Energy Level Tracker]\n\n🌟 Daily Achievements\n• Goal Progress: Current status from [Goal Status]\n• Self-Care: Latest activity from [Self-Care Activities]\n• Habit Completion: Current status from [Wellness Habit Tracker]\n\n⚡ Next Steps\n• Suggest optimal timing for remaining activities\n• Highlight areas needing attention\n• Recommend recovery periods\n\nProvide visual progress bars and highlight significant patterns.",
+            "prompt": "Create a comprehensive wellness snapshot with correlations and recommendations:\n\n🌅 Daily Overview ([Check-in Time])\n• Mood: Current mood from [Mood Tracker]\n• Energy: Level from [Energy Level Tracker]\n• Physical: [Pain/Discomfort Level]\n\n📈 Progress & Priorities\n🌊 Hydration: [Water Intake]/12 glasses\n👣 Movement: [Daily Steps]/10000 steps\n🧘 Mindfulness: [Mindfulness Minutes]/30min\n💤 Rest: [Sleep Hours]/8h\n\n📁 Key Patterns\n• Activity Impact: [Activity Log] → Energy\n• Environment Effect: [Environment Check] → Mood\n• Rest Quality: [Sleep Quality] → Performance\n\n🌟 Next Actions\n• Priority task based on current metrics\n• Suggested break/recovery timing\n• Quick win opportunity\n\n🔄 Daily Achievements\n• Completed: [Wellness Habit Tracker]\n• Goal Progress: [Goal Status]\n• Next milestone\n\nProvide specific, time-appropriate recommendations.",
             "parameters": {
                 "model": "bedrock-anthropic.claude-3-5-sonnet-v2-0",
                 "temperature": 0.1
@@ -574,10 +598,45 @@
             "y": 161,
             "type": "inferred-text",
             "title": "Movement & Recovery Guide",
-            "prompt": "Based on the user's current state:\n\nMood: [Mood Tracker]\nEnergy Level: [Energy Level Tracker]\nPain/Discomfort: [Pain/Discomfort Level]\nPain Location: [Pain Location]\n\n1. Activity Suggestion:\nProvide a specific, gentle movement or activity considering:\n- Current energy level\n- Any pain or discomfort\n- Emotional state\n- Time of day\n\n2. Recovery Guidance:\n- Optimal rest duration based on [Activity Log]\n- Recovery techniques aligned with [Pain/Discomfort Level]\n- Rest timing based on [Energy Level Tracker]\n\n3. Balance Strategy:\n- Activity-rest ratio recommendations\n- Signs to watch for overexertion\n- Adaptation suggestions\n\n4. Modifications:\n- Low-energy alternatives\n- Pain-aware adjustments\n- Progressive options\n\nProvide specific duration, intensity level, and clear recovery guidelines.",
+            "prompt": "Based on the user's current state:\n\nMood: [Mood Tracker]\nEnergy Level: [Energy Level Tracker]\nPain/Discomfort: [Pain/Discomfort Level]\nPain Location: [Pain Location]\nTime: [Check-in Time]\n\n1. Activity Guidance\nProvide specific suggestions based on:\n- Current energy and mood state\n- Time of day appropriateness\n- Pain considerations\n- Recent activities from [Activity Log]\n\n2. Recovery Strategy\n- Optimal rest timing and duration\n- Active vs passive recovery options\n- Pain management techniques\n- Energy conservation methods\n\n3. Balance & Integration\n- Activity-rest ratio guidelines\n- Energy management tips\n- Environmental considerations from [Environment Check]\n- Alignment with [Daily Goal]\n\n4. Personalization\n- Modifications for current state\n- Progressive adaptations\n- Alternative options\n- Success indicators\n\nProvide clear, actionable guidance with specific durations and intensities.",
             "parameters": {
                 "model": "bedrock-anthropic.claude-3-5-sonnet-v2-0",
                 "temperature": 0.3
+            },
+            "height": 6
+        },
+        {
+            "x": 0,
+            "width": 12,
+            "y": 167,
+            "type": "text-input",
+            "title": "Environment Check",
+            "placeholder": "Note your current environment. Examples:\n\n• Lighting: Natural light, dim, bright artificial\n• Noise Level: Quiet, moderate background noise, loud\n• Temperature: Comfortable, too warm, too cold\n• Space: Open, cramped, cluttered, organized\n• Air Quality: Fresh, stuffy, humid\n\nInclude any factors affecting your comfort...",
+            "height": 4
+        },
+        {
+            "x": 0,
+            "width": 12,
+            "y": 171,
+            "type": "inferred-text",
+            "title": "Environment Impact Analysis",
+            "prompt": "Analyze environmental factors and their impact on wellness:\n\n1. Current Environment\n- Physical space details from [Environment Check]\n- Time context: [Check-in Time]\n- Impact on comfort level: [Pain/Discomfort Level]\n\n2. Correlations\n- Environment-Mood: [Mood Tracker]\n- Environment-Energy: [Energy Level Tracker]\n- Environment-Focus: Activity patterns\n\n3. Optimization Suggestions\n- Environmental adjustments\n- Comfort improvements\n- Productivity enhancements\n\n4. Action Items\n- Immediate changes\n- Long-term improvements\n- Environmental triggers to monitor\n\nProvide practical suggestions for environmental optimization.",
+            "parameters": {
+                "temperature": 0.3,
+                "model": "bedrock-anthropic.claude-3-5-sonnet-v2-0"
+            },
+            "height": 6
+        },
+        {
+            "x": 0,
+            "width": 12,
+            "y": 177,
+            "type": "inferred-text",
+            "title": "Wellness Tips & Education",
+            "prompt": "Based on today's tracking data, provide relevant wellness education:\n\n1. Current Focus Areas\n- Mood patterns from [Mood Tracker]\n- Energy management from [Energy Level Tracker]\n- Physical wellness from [Pain/Discomfort Level]\n\n2. Educational Tips\n- Research-based insight for current challenges\n- Practical implementation strategies\n- Scientific background for tracked metrics\n\n3. Personalized Learning\n- Specific to user's patterns\n- Builds on tracked habits [Wellness Habit Tracker]\n- Aligned with goals [Daily Goal]\n\n4. Action Steps\n- Simple, achievable next steps\n- Connection to current metrics\n- Progress-based learning path\n\nProvide clear, practical education that connects directly to user's experience.",
+            "parameters": {
+                "temperature": 0.3,
+                "model": "bedrock-anthropic.claude-3-5-sonnet-v2-0"
             },
             "height": 6
         }
